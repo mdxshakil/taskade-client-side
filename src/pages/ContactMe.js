@@ -21,7 +21,7 @@ const ContactMe = () => {
         const userName = user?.displayName;
         const mailDetails = {message, userEmail, userName} 
         
-        fetch('http://localhost:5000/email',{
+        fetch('https://taskade-server.onrender.com/email',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -18,6 +18,7 @@ const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [errorElement, setErrorElement] = useState('')
     const [currentUser, setCurrentUser] = useState({});
+    const navigate = useNavigate();
     const [token] = useToken(currentUser);
 
     if (loading || updating) {
@@ -29,7 +30,7 @@ const Register = () => {
         errorMessage = <p className='text-sm font-bold text-red-500'>{error?.message || updateError?.message}</p>;
     }
     if (token) {
-        console.log('success');
+        navigate('/dashboard');
     }
     const onSubmit = (data) => {
         if (data.password !== data.confirmPassword) {

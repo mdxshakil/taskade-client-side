@@ -16,7 +16,7 @@ const TaskModal = ({refetch, setTaskModal, taskModal}) => {
             checked:false,
         }
         if (user?.email) {
-            fetch('http://localhost:5000/task', {
+            fetch('https://taskade-server.onrender.com/task', {
                 method: 'POST',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`,

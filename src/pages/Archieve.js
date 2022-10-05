@@ -11,7 +11,7 @@ const Archieve = () => {
     const [user, loading] = useAuthState(auth);
     //load archived tasks
     const {data:tasks, isLoading, refetch, error} = useQuery('archivedtasks', ()=>
-    fetch(`http://localhost:5000/archive/${user?.email}`,{
+    fetch(`https://taskade-server.onrender.com/archive/${user?.email}`,{
         method:'GET',
         headers:{
             authorization : `Bearer ${localStorage.getItem('accessToken')}`

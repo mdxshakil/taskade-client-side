@@ -8,7 +8,7 @@ const EditModal = ({ editTask, refetch, setEditTaskModal }) => {
             taskName:data.taskName,
             taskDetails:data.taskDetails
         }
-        fetch(`http://localhost:5000/task/update/${editTask?._id}`,{
+        fetch(`https://taskade-server.onrender.com/task/update/${editTask?._id}`,{
             method: 'PUT',
             headers:{
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,

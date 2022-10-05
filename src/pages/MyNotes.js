@@ -15,7 +15,7 @@ const MyNotes = () => {
 
     //load tasks
     const { data: tasks, isLoading, refetch, error } = useQuery('usertasks', () =>
-        fetch(`http://localhost:5000/task/${user?.email}`,{
+        fetch(`https://taskade-server.onrender.com/task/${user?.email}`,{
             method: 'GET',
             headers:{
                 authorization : `Bearer ${localStorage.getItem('accessToken')}`

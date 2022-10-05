@@ -8,7 +8,7 @@ const TasksRow = ({ task, index, refetchAllTask, setEditTask, setEditTaskModal }
     const [taskChecked, setTaskChecked] = useState(!checked);
 
     const { data, isLoading, refetch } = useQuery('archiveTask', () =>
-        fetch(`http://localhost:5000/task/${_id}`, {
+        fetch(`https://taskade-server.onrender.com/task/${_id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const TasksRow = ({ task, index, refetchAllTask, setEditTask, setEditTaskModal }
     const handleMarkAsDone = (id, task) => {
         const isChecked = { checked: taskChecked };
         // console.log(isChecked);
-        fetch(`http://localhost:5000/task/mark/${id}`, {
+        fetch(`https://taskade-server.onrender.com/task/mark/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json',

@@ -18,12 +18,8 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<HomePage></HomePage>}></Route>
-        <Route path='/login' element={<CheckUser>
-          <Login></Login>
-        </CheckUser>}></Route>
-        <Route path='/register' element={<CheckUser>
-          <Register></Register>
-        </CheckUser>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>

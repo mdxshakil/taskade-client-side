@@ -28,7 +28,7 @@ const useToken = (newUser) => {
 
         if (user && newUser) {
             const sendUserToDb = async () => {
-               await fetch(`http://localhost:5000/users/${email}`, {
+               await fetch(`https://taskade-server.onrender.com/users/${email}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
